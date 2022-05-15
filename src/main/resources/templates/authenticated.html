@@ -5,7 +5,8 @@
     <ul>
         <li><a href="/">главная</a></li>
         <li sec:authorize="isAuthenticated()"><a href="/authenticated">аутенфицированные</a></li>
-        <li sec:authorize="isAuthenticated()"><a href="/books">книги</a></li>
+        <li sec:authorize="hasRole('CLIENT')"><a href="/client">клиент</a></li>
+        <li sec:authorize="hasRole('ADMIN')"><a href="/admin">администратор</a></li>
         <li sec:authorize="isAnonymous()"><a href="/login">войти</a></li>
         <li sec:authorize="isAuthenticated()"><a href="/logout">выйти</a></li>
     </ul>
